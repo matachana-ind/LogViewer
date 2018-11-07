@@ -1,11 +1,11 @@
-<?php namespace Arcanedev\LogViewer;
+<?php namespace MatachanaInd\LogViewer;
 
 use Arcanedev\Support\PackageServiceProvider;
 
 /**
  * Class     LogViewerServiceProvider
  *
- * @package  Arcanedev\LogViewer
+ * @package  MatachanaInd\LogViewer
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class LogViewerServiceProvider extends PackageServiceProvider

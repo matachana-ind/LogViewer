@@ -1,12 +1,12 @@
-<?php namespace Arcanedev\LogViewer\Facades;
+<?php namespace MatachanaInd\LogViewer\Facades;
 
-use Arcanedev\LogViewer\Contracts\Utilities\LogMenu as LogMenuContract;
+use MatachanaInd\LogViewer\Contracts\Utilities\LogMenu as LogMenuContract;
 use Illuminate\Support\Facades\Facade;
 
 /**
  * Class     LogMenu
  *
- * @package  Arcanedev\LogViewer\Facades
+ * @package  MatachanaInd\LogViewer\Facades
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class LogMenu extends Facade

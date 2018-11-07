@@ -1,11 +1,11 @@
-<?php namespace Arcanedev\LogViewer\Http\Routes;
+<?php namespace MatachanaInd\LogViewer\Http\Routes;
 
 use Arcanedev\Support\Routing\RouteRegistrar;
 
 /**
  * Class     LogViewerRoute
  *
- * @package  Arcanedev\LogViewer\Http\Routes
+ * @package  MatachanaInd\LogViewer\Http\Routes
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  *
  * @codeCoverageIgnore

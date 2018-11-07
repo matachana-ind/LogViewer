@@ -1,12 +1,12 @@
-<?php namespace Arcanedev\LogViewer\Providers;
+<?php namespace MatachanaInd\LogViewer\Providers;
 
-use Arcanedev\LogViewer\Commands;
+use MatachanaInd\LogViewer\Commands;
 use Arcanedev\Support\Providers\CommandServiceProvider as ServiceProvider;
 
 /**
  * Class     CommandsServiceProvider
  *
- * @package  Arcanedev\LogViewer\Providers
+ * @package  MatachanaInd\LogViewer\Providers
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class CommandsServiceProvider extends ServiceProvider

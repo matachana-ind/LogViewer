@@ -1,15 +1,15 @@
-<?php namespace Arcanedev\LogViewer\Utilities;
+<?php namespace MatachanaInd\LogViewer\Utilities;
 
-use Arcanedev\LogViewer\Contracts\Utilities\Factory as FactoryContract;
-use Arcanedev\LogViewer\Contracts\Utilities\Filesystem as FilesystemContract;
-use Arcanedev\LogViewer\Contracts\Utilities\LogLevels as LogLevelsContract;
-use Arcanedev\LogViewer\Entities\LogCollection;
-use Arcanedev\LogViewer\Tables\StatsTable;
+use MatachanaInd\LogViewer\Contracts\Utilities\Factory as FactoryContract;
+use MatachanaInd\LogViewer\Contracts\Utilities\Filesystem as FilesystemContract;
+use MatachanaInd\LogViewer\Contracts\Utilities\LogLevels as LogLevelsContract;
+use MatachanaInd\LogViewer\Entities\LogCollection;
+use MatachanaInd\LogViewer\Tables\StatsTable;
 
 /**
  * Class     Factory
  *
- * @package  Arcanedev\LogViewer\Utilities
+ * @package  MatachanaInd\LogViewer\Utilities
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class Factory implements FactoryContract
@@ -22,14 +22,14 @@ class Factory implements FactoryContract
     /**
      * The filesystem instance.
      *
-     * @var \Arcanedev\LogViewer\Contracts\Utilities\Filesystem
+     * @var \MatachanaInd\LogViewer\Contracts\Utilities\Filesystem
      */
     protected $filesystem;
 
     /**
      * The log levels instance.
      *
-     * @var \Arcanedev\LogViewer\Contracts\Utilities\LogLevels
+     * @var \MatachanaInd\LogViewer\Contracts\Utilities\LogLevels
      */
     private $levels;
 
@@ -41,8 +41,8 @@ class Factory implements FactoryContract
     /**
      * Create a new instance.
      *
-     * @param  \Arcanedev\LogViewer\Contracts\Utilities\Filesystem  $filesystem
-     * @param  \Arcanedev\LogViewer\Contracts\Utilities\LogLevels   $levels
+     * @param  \MatachanaInd\LogViewer\Contracts\Utilities\Filesystem  $filesystem
+     * @param  \MatachanaInd\LogViewer\Contracts\Utilities\LogLevels   $levels
      */
     public function __construct(FilesystemContract $filesystem, LogLevelsContract $levels) {
         $this->setFilesystem($filesystem);
@@ -57,7 +57,7 @@ class Factory implements FactoryContract
     /**
      * Get the filesystem instance.
      *
-     * @return \Arcanedev\LogViewer\Contracts\Utilities\Filesystem
+     * @return \MatachanaInd\LogViewer\Contracts\Utilities\Filesystem
      */
     public function getFilesystem()
     {
@@ -67,7 +67,7 @@ class Factory implements FactoryContract
     /**
      * Set the filesystem instance.
      *
-     * @param  \Arcanedev\LogViewer\Contracts\Utilities\Filesystem  $filesystem
+     * @param  \MatachanaInd\LogViewer\Contracts\Utilities\Filesystem  $filesystem
      *
      * @return self
      */
@@ -81,7 +81,7 @@ class Factory implements FactoryContract
     /**
      * Get the log levels instance.
      *
-     * @return \Arcanedev\LogViewer\Contracts\Utilities\LogLevels
+     * @return \MatachanaInd\LogViewer\Contracts\Utilities\LogLevels
      */
     public function getLevels()
     {
@@ -91,7 +91,7 @@ class Factory implements FactoryContract
     /**
      * Set the log levels instance.
      *
-     * @param  \Arcanedev\LogViewer\Contracts\Utilities\LogLevels  $levels
+     * @param  \MatachanaInd\LogViewer\Contracts\Utilities\LogLevels  $levels
      *
      * @return self
      */
@@ -148,7 +148,7 @@ class Factory implements FactoryContract
     /**
      * Get all logs.
      *
-     * @return \Arcanedev\LogViewer\Entities\LogCollection
+     * @return \MatachanaInd\LogViewer\Entities\LogCollection
      */
     public function logs()
     {
@@ -165,7 +165,7 @@ class Factory implements FactoryContract
      *
      * @see logs
      *
-     * @return \Arcanedev\LogViewer\Entities\LogCollection
+     * @return \MatachanaInd\LogViewer\Entities\LogCollection
      */
     public function all()
     {
@@ -189,7 +189,7 @@ class Factory implements FactoryContract
      *
      * @param  string  $date
      *
-     * @return \Arcanedev\LogViewer\Entities\Log
+     * @return \MatachanaInd\LogViewer\Entities\Log
      */
     public function log($date)
     {
@@ -201,7 +201,7 @@ class Factory implements FactoryContract
      *
      * @param  string  $date
      *
-     * @return \Arcanedev\LogViewer\Entities\Log
+     * @return \MatachanaInd\LogViewer\Entities\Log
      */
     public function get($date)
     {
@@ -214,7 +214,7 @@ class Factory implements FactoryContract
      * @param  string  $date
      * @param  string  $level
      *
-     * @return \Arcanedev\LogViewer\Entities\LogEntryCollection
+     * @return \MatachanaInd\LogViewer\Entities\LogEntryCollection
      */
     public function entries($date, $level = 'all')
     {
@@ -236,7 +236,7 @@ class Factory implements FactoryContract
      *
      * @param  string|null  $locale
      *
-     * @return \Arcanedev\LogViewer\Tables\StatsTable
+     * @return \MatachanaInd\LogViewer\Tables\StatsTable
      */
     public function statsTable($locale = null)
     {

@@ -1,12 +1,12 @@
-<?php namespace Arcanedev\LogViewer\Commands;
+<?php namespace MatachanaInd\LogViewer\Commands;
 
-use Arcanedev\LogViewer\Contracts\LogViewer as LogViewerContract;
+use MatachanaInd\LogViewer\Contracts\LogViewer as LogViewerContract;
 use Arcanedev\Support\Bases\Command as BaseCommand;
 
 /**
  * Class     Command
  *
- * @package  Arcanedev\LogViewer\Bases
+ * @package  MatachanaInd\LogViewer\Bases
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 abstract class Command extends BaseCommand
@@ -16,7 +16,7 @@ abstract class Command extends BaseCommand
      | -----------------------------------------------------------------
      */
 
-    /** @var \Arcanedev\LogViewer\Contracts\LogViewer */
+    /** @var \MatachanaInd\LogViewer\Contracts\LogViewer */
     protected $logViewer;
 
     /* -----------------------------------------------------------------
@@ -27,7 +27,7 @@ abstract class Command extends BaseCommand
     /**
      * Create the command instance.
      *
-     * @param  \Arcanedev\LogViewer\Contracts\LogViewer  $logViewer
+     * @param  \MatachanaInd\LogViewer\Contracts\LogViewer  $logViewer
      */
     public function __construct(LogViewerContract $logViewer)
     {

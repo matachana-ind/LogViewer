@@ -1,11 +1,11 @@
-<?php namespace Arcanedev\LogViewer\Commands;
+<?php namespace MatachanaInd\LogViewer\Commands;
 
-use Arcanedev\LogViewer\Tables\StatsTable;
+use MatachanaInd\LogViewer\Tables\StatsTable;
 
 /**
  * Class     StatsCommand
  *
- * @package  Arcanedev\LogViewer\Commands
+ * @package  MatachanaInd\LogViewer\Commands
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class StatsCommand extends Command
@@ -66,7 +66,7 @@ class StatsCommand extends Command
     /**
      * Prepare footer.
      *
-     * @param  \Arcanedev\LogViewer\Tables\StatsTable  $stats
+     * @param  \MatachanaInd\LogViewer\Tables\StatsTable  $stats
      *
      * @return array
      */

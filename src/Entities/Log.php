@@ -1,4 +1,4 @@
-<?php namespace Arcanedev\LogViewer\Entities;
+<?php namespace MatachanaInd\LogViewer\Entities;
 
 use Carbon\Carbon;
 use Illuminate\Contracts\Support\Arrayable;
@@ -9,7 +9,7 @@ use SplFileInfo;
 /**
  * Class     Log
  *
- * @package  Arcanedev\LogViewer\Entities
+ * @package  MatachanaInd\LogViewer\Entities
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  *
  * @todo     Add a stats method
@@ -27,7 +27,7 @@ class Log implements Arrayable, Jsonable, JsonSerializable
     /** @var string */
     private $path;
 
-    /** @var \Arcanedev\LogViewer\Entities\LogEntryCollection */
+    /** @var \MatachanaInd\LogViewer\Entities\LogEntryCollection */
     private $entries;
 
     /** @var \SplFileInfo */
@@ -132,7 +132,7 @@ class Log implements Arrayable, Jsonable, JsonSerializable
      *
      * @param  string  $level
      *
-     * @return \Arcanedev\LogViewer\Entities\LogEntryCollection
+     * @return \MatachanaInd\LogViewer\Entities\LogEntryCollection
      */
     public function entries($level = 'all')
     {
@@ -146,7 +146,7 @@ class Log implements Arrayable, Jsonable, JsonSerializable
      *
      * @param  string  $level
      *
-     * @return \Arcanedev\LogViewer\Entities\LogEntryCollection
+     * @return \MatachanaInd\LogViewer\Entities\LogEntryCollection
      */
     public function getByLevel($level)
     {

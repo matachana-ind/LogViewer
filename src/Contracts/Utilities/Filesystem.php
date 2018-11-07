@@ -1,11 +1,11 @@
-<?php namespace Arcanedev\LogViewer\Contracts\Utilities;
+<?php namespace MatachanaInd\LogViewer\Contracts\Utilities;
 
-use Arcanedev\LogViewer\Contracts\Patternable;
+use MatachanaInd\LogViewer\Contracts\Patternable;
 
 /**
  * Interface  Filesystem
  *
- * @package   Arcanedev\LogViewer\Contracts\Utilities
+ * @package   MatachanaInd\LogViewer\Contracts\Utilities
  * @author    ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 interface Filesystem extends Patternable
@@ -102,7 +102,7 @@ interface Filesystem extends Patternable
      *
      * @return string
      *
-     * @throws \Arcanedev\LogViewer\Exceptions\FilesystemException
+     * @throws \MatachanaInd\LogViewer\Exceptions\FilesystemException
      */
     public function read($date);
 
@@ -113,7 +113,7 @@ interface Filesystem extends Patternable
      *
      * @return bool
      *
-     * @throws \Arcanedev\LogViewer\Exceptions\FilesystemException
+     * @throws \MatachanaInd\LogViewer\Exceptions\FilesystemException
      */
     public function delete($date);
 

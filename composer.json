@@ -26,19 +26,19 @@
     },
     "autoload": {
         "psr-4": {
-            "matachana-ind\\LogViewer\\": "src/"
+            "MatachanaInd\\LogViewer\\": "src/"
         },
         "files": ["constants.php", "helpers.php"]
     },
     "autoload-dev": {
         "psr-4": {
-            "matachana-ind\\LogViewer\\Tests\\": "tests/"
+            "MatachanaInd\\LogViewer\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "matachana-ind\\LogViewer\\LogViewerServiceProvider"
+                "MatachanaInd\\LogViewer\\LogViewerServiceProvider"
             ]
         }
     }

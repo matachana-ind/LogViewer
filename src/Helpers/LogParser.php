@@ -1,12 +1,12 @@
-<?php namespace Arcanedev\LogViewer\Helpers;
+<?php namespace MatachanaInd\LogViewer\Helpers;
 
-use Arcanedev\LogViewer\Utilities\LogLevels;
+use MatachanaInd\LogViewer\Utilities\LogLevels;
 use Illuminate\Support\Str;
 
 /**
  * Class     LogParser
  *
- * @package  Arcanedev\LogViewer\Helpers
+ * @package  MatachanaInd\LogViewer\Helpers
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class LogParser

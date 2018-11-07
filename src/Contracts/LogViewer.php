@@ -1,9 +1,9 @@
-<?php namespace Arcanedev\LogViewer\Contracts;
+<?php namespace MatachanaInd\LogViewer\Contracts;
 
 /**
  * Interface  LogViewer
  *
- * @package   Arcanedev\LogViewer\Contracts
+ * @package   MatachanaInd\LogViewer\Contracts
  * @author    ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 interface LogViewer extends Patternable
@@ -48,7 +48,7 @@ interface LogViewer extends Patternable
     /**
      * Get all logs.
      *
-     * @return \Arcanedev\LogViewer\Entities\LogCollection
+     * @return \MatachanaInd\LogViewer\Entities\LogCollection
      */
     public function all();
 
@@ -66,7 +66,7 @@ interface LogViewer extends Patternable
      *
      * @param  string  $date
      *
-     * @return \Arcanedev\LogViewer\Entities\Log
+     * @return \MatachanaInd\LogViewer\Entities\Log
      */
     public function get($date);
 
@@ -76,7 +76,7 @@ interface LogViewer extends Patternable
      * @param  string  $date
      * @param  string  $level
      *
-     * @return \Arcanedev\LogViewer\Entities\LogEntryCollection
+     * @return \MatachanaInd\LogViewer\Entities\LogEntryCollection
      */
     public function entries($date, $level = 'all');
 
@@ -103,7 +103,7 @@ interface LogViewer extends Patternable
      *
      * @param  string|null  $locale
      *
-     * @return \Arcanedev\LogViewer\Tables\StatsTable
+     * @return \MatachanaInd\LogViewer\Tables\StatsTable
      */
     public function statsTable($locale = null);
 
@@ -114,7 +114,7 @@ interface LogViewer extends Patternable
      *
      * @return bool
      *
-     * @throws \Arcanedev\LogViewer\Exceptions\FilesystemException
+     * @throws \MatachanaInd\LogViewer\Exceptions\FilesystemException
      */
     public function delete($date);
 

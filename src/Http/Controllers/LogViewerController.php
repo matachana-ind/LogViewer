@@ -1,9 +1,9 @@
-<?php namespace Arcanedev\LogViewer\Http\Controllers;
+<?php namespace MatachanaInd\LogViewer\Http\Controllers;
 
-use Arcanedev\LogViewer\Contracts\LogViewer as LogViewerContract;
-use Arcanedev\LogViewer\Entities\LogEntry;
-use Arcanedev\LogViewer\Exceptions\LogNotFoundException;
-use Arcanedev\LogViewer\Tables\StatsTable;
+use MatachanaInd\LogViewer\Contracts\LogViewer as LogViewerContract;
+use MatachanaInd\LogViewer\Entities\LogEntry;
+use MatachanaInd\LogViewer\Exceptions\LogNotFoundException;
+use MatachanaInd\LogViewer\Tables\StatsTable;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Routing\Controller;
@@ -27,7 +27,7 @@ class LogViewerController extends Controller
     /**
      * The log viewer instance
      *
-     * @var \Arcanedev\LogViewer\Contracts\LogViewer
+     * @var \MatachanaInd\LogViewer\Contracts\LogViewer
      */
     protected $logViewer;
 
@@ -45,7 +45,7 @@ class LogViewerController extends Controller
     /**
      * LogViewerController constructor.
      *
-     * @param  \Arcanedev\LogViewer\Contracts\LogViewer  $logViewer
+     * @param  \MatachanaInd\LogViewer\Contracts\LogViewer  $logViewer
      */
     public function __construct(LogViewerContract $logViewer)
     {
@@ -234,7 +234,7 @@ class LogViewerController extends Controller
      *
      * @param  string  $date
      *
-     * @return \Arcanedev\LogViewer\Entities\Log|null
+     * @return \MatachanaInd\LogViewer\Entities\Log|null
      */
     protected function getLogOrFail($date)
     {
@@ -253,7 +253,7 @@ class LogViewerController extends Controller
     /**
      * Prepare chart data.
      *
-     * @param  \Arcanedev\LogViewer\Tables\StatsTable  $stats
+     * @param  \MatachanaInd\LogViewer\Tables\StatsTable  $stats
      *
      * @return string
      */

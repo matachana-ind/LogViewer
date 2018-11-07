@@ -1,14 +1,14 @@
-<?php namespace Arcanedev\LogViewer\Providers;
+<?php namespace MatachanaInd\LogViewer\Providers;
 
-use Arcanedev\LogViewer\Contracts;
-use Arcanedev\LogViewer\Utilities;
+use MatachanaInd\LogViewer\Contracts;
+use MatachanaInd\LogViewer\Utilities;
 use Arcanedev\Support\ServiceProvider;
 use Illuminate\Support\Arr;
 
 /**
  * Class     UtilitiesServiceProvider
  *
- * @package  Arcanedev\LogViewer\Providers
+ * @package  MatachanaInd\LogViewer\Providers
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class UtilitiesServiceProvider extends ServiceProvider

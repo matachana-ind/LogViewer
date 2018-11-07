@@ -1,11 +1,11 @@
-<?php namespace Arcanedev\LogViewer\Contracts\Utilities;
+<?php namespace MatachanaInd\LogViewer\Contracts\Utilities;
 
-use Arcanedev\LogViewer\Contracts\Patternable;
+use MatachanaInd\LogViewer\Contracts\Patternable;
 
 /**
  * Interface  Factory
  *
- * @package   Arcanedev\LogViewer\Contracts\Utilities
+ * @package   MatachanaInd\LogViewer\Contracts\Utilities
  * @author    ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 interface Factory extends Patternable
@@ -18,14 +18,14 @@ interface Factory extends Patternable
     /**
      * Get the filesystem instance.
      *
-     * @return \Arcanedev\LogViewer\Contracts\Utilities\Filesystem
+     * @return \MatachanaInd\LogViewer\Contracts\Utilities\Filesystem
      */
     public function getFilesystem();
 
     /**
      * Set the filesystem instance.
      *
-     * @param  \Arcanedev\LogViewer\Contracts\Utilities\Filesystem  $filesystem
+     * @param  \MatachanaInd\LogViewer\Contracts\Utilities\Filesystem  $filesystem
      *
      * @return self
      */
@@ -34,14 +34,14 @@ interface Factory extends Patternable
     /**
      * Get the log levels instance.
      *
-     * @return  \Arcanedev\LogViewer\Contracts\Utilities\LogLevels  $levels
+     * @return  \MatachanaInd\LogViewer\Contracts\Utilities\LogLevels  $levels
      */
     public function getLevels();
 
     /**
      * Set the log levels instance.
      *
-     * @param  \Arcanedev\LogViewer\Contracts\Utilities\LogLevels  $levels
+     * @param  \MatachanaInd\LogViewer\Contracts\Utilities\LogLevels  $levels
      *
      * @return self
      */
@@ -59,7 +59,7 @@ interface Factory extends Patternable
     /**
      * Get all logs.
      *
-     * @return \Arcanedev\LogViewer\Entities\LogCollection
+     * @return \MatachanaInd\LogViewer\Entities\LogCollection
      */
     public function logs();
 
@@ -73,7 +73,7 @@ interface Factory extends Patternable
      *
      * @see logs
      *
-     * @return \Arcanedev\LogViewer\Entities\LogCollection
+     * @return \MatachanaInd\LogViewer\Entities\LogCollection
      */
     public function all();
 
@@ -91,7 +91,7 @@ interface Factory extends Patternable
      *
      * @param  string  $date
      *
-     * @return \Arcanedev\LogViewer\Entities\Log
+     * @return \MatachanaInd\LogViewer\Entities\Log
      */
     public function log($date);
 
@@ -100,7 +100,7 @@ interface Factory extends Patternable
      *
      * @param  string  $date
      *
-     * @return \Arcanedev\LogViewer\Entities\Log
+     * @return \MatachanaInd\LogViewer\Entities\Log
      */
     public function get($date);
 
@@ -110,7 +110,7 @@ interface Factory extends Patternable
      * @param  string  $date
      * @param  string  $level
      *
-     * @return \Arcanedev\LogViewer\Entities\LogEntryCollection
+     * @return \MatachanaInd\LogViewer\Entities\LogEntryCollection
      */
     public function entries($date, $level = 'all');
 
@@ -167,7 +167,7 @@ interface Factory extends Patternable
      *
      * @param  string|null  $locale
      *
-     * @return \Arcanedev\LogViewer\Tables\StatsTable
+     * @return \MatachanaInd\LogViewer\Tables\StatsTable
      */
     public function statsTable($locale = null);
 

@@ -1,9 +1,9 @@
-<?php namespace Arcanedev\LogViewer\Exceptions;
+<?php namespace MatachanaInd\LogViewer\Exceptions;
 
 /**
  * Class     LogViewerException
  *
- * @package  Arcanedev\LogViewer\Exceptions
+ * @package  MatachanaInd\LogViewer\Exceptions
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class LogViewerException extends \Exception {}

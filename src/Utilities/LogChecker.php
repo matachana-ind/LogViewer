@@ -1,13 +1,13 @@
-<?php namespace Arcanedev\LogViewer\Utilities;
+<?php namespace MatachanaInd\LogViewer\Utilities;
 
-use Arcanedev\LogViewer\Contracts\Utilities\Filesystem as FilesystemContract;
-use Arcanedev\LogViewer\Contracts\Utilities\LogChecker as LogCheckerContract;
+use MatachanaInd\LogViewer\Contracts\Utilities\Filesystem as FilesystemContract;
+use MatachanaInd\LogViewer\Contracts\Utilities\LogChecker as LogCheckerContract;
 use Illuminate\Contracts\Config\Repository as ConfigContract;
 
 /**
  * Class     LogChecker
  *
- * @package  Arcanedev\LogViewer\Utilities
+ * @package  MatachanaInd\LogViewer\Utilities
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  *
  * @todo     Adding the translation or not ??
@@ -29,7 +29,7 @@ class LogChecker implements LogCheckerContract
     /**
      * The filesystem instance.
      *
-     * @var \Arcanedev\LogViewer\Contracts\Utilities\Filesystem
+     * @var \MatachanaInd\LogViewer\Contracts\Utilities\Filesystem
      */
     private $filesystem;
 
@@ -70,7 +70,7 @@ class LogChecker implements LogCheckerContract
      * LogChecker constructor.
      *
      * @param  \Illuminate\Contracts\Config\Repository              $config
-     * @param  \Arcanedev\LogViewer\Contracts\Utilities\Filesystem  $filesystem
+     * @param  \MatachanaInd\LogViewer\Contracts\Utilities\Filesystem  $filesystem
      */
     public function __construct(ConfigContract $config, FilesystemContract $filesystem)
     {
@@ -101,7 +101,7 @@ class LogChecker implements LogCheckerContract
     /**
      * Set the Filesystem instance.
      *
-     * @param  \Arcanedev\LogViewer\Contracts\Utilities\Filesystem  $filesystem
+     * @param  \MatachanaInd\LogViewer\Contracts\Utilities\Filesystem  $filesystem
      *
      * @return self
      */
@@ -220,7 +220,7 @@ class LogChecker implements LogCheckerContract
     /**
      * Refresh the checks.
      *
-     * @return \Arcanedev\LogViewer\Utilities\LogChecker
+     * @return \MatachanaInd\LogViewer\Utilities\LogChecker
      */
     private function refresh()
     {

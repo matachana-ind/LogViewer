@@ -1,13 +1,13 @@
-<?php namespace Arcanedev\LogViewer\Utilities;
+<?php namespace MatachanaInd\LogViewer\Utilities;
 
-use Arcanedev\LogViewer\Contracts\Utilities\Filesystem as FilesystemContract;
-use Arcanedev\LogViewer\Exceptions\FilesystemException;
+use MatachanaInd\LogViewer\Contracts\Utilities\Filesystem as FilesystemContract;
+use MatachanaInd\LogViewer\Exceptions\FilesystemException;
 use Illuminate\Filesystem\Filesystem as IlluminateFilesystem;
 
 /**
  * Class     Filesystem
  *
- * @package  Arcanedev\LogViewer\Utilities
+ * @package  MatachanaInd\LogViewer\Utilities
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class Filesystem implements FilesystemContract
@@ -223,7 +223,7 @@ class Filesystem implements FilesystemContract
      *
      * @return string
      *
-     * @throws \Arcanedev\LogViewer\Exceptions\FilesystemException
+     * @throws \MatachanaInd\LogViewer\Exceptions\FilesystemException
      */
     public function read($date)
     {
@@ -246,7 +246,7 @@ class Filesystem implements FilesystemContract
      *
      * @return bool
      *
-     * @throws \Arcanedev\LogViewer\Exceptions\FilesystemException
+     * @throws \MatachanaInd\LogViewer\Exceptions\FilesystemException
      */
     public function delete($date)
     {
@@ -301,7 +301,7 @@ class Filesystem implements FilesystemContract
      *
      * @return string
      *
-     * @throws \Arcanedev\LogViewer\Exceptions\FilesystemException
+     * @throws \MatachanaInd\LogViewer\Exceptions\FilesystemException
      */
     private function getLogPath($date)
     {

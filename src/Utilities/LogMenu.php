@@ -1,14 +1,14 @@
-<?php namespace Arcanedev\LogViewer\Utilities;
+<?php namespace MatachanaInd\LogViewer\Utilities;
 
-use Arcanedev\LogViewer\Contracts\Utilities\LogMenu as LogMenuContract;
-use Arcanedev\LogViewer\Contracts\Utilities\LogStyler as LogStylerContract;
-use Arcanedev\LogViewer\Entities\Log;
+use MatachanaInd\LogViewer\Contracts\Utilities\LogMenu as LogMenuContract;
+use MatachanaInd\LogViewer\Contracts\Utilities\LogStyler as LogStylerContract;
+use MatachanaInd\LogViewer\Entities\Log;
 use Illuminate\Contracts\Config\Repository as ConfigContract;
 
 /**
  * Class     LogMenu
  *
- * @package  Arcanedev\LogViewer\Utilities
+ * @package  MatachanaInd\LogViewer\Utilities
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class LogMenu implements LogMenuContract
@@ -28,7 +28,7 @@ class LogMenu implements LogMenuContract
     /**
      * The log styler instance.
      *
-     * @var \Arcanedev\LogViewer\Contracts\Utilities\LogStyler
+     * @var \MatachanaInd\LogViewer\Contracts\Utilities\LogStyler
      */
     private $styler;
 
@@ -41,7 +41,7 @@ class LogMenu implements LogMenuContract
      * LogMenu constructor.
      *
      * @param  \Illuminate\Contracts\Config\Repository             $config
-     * @param  \Arcanedev\LogViewer\Contracts\Utilities\LogStyler  $styler
+     * @param  \MatachanaInd\LogViewer\Contracts\Utilities\LogStyler  $styler
      */
     public function __construct(ConfigContract $config, LogStylerContract $styler)
     {
@@ -71,7 +71,7 @@ class LogMenu implements LogMenuContract
     /**
      * Set the log styler instance.
      *
-     * @param  \Arcanedev\LogViewer\Contracts\Utilities\LogStyler  $styler
+     * @param  \MatachanaInd\LogViewer\Contracts\Utilities\LogStyler  $styler
      *
      * @return self
      */
@@ -90,7 +90,7 @@ class LogMenu implements LogMenuContract
     /**
      * Make log menu.
      *
-     * @param  \Arcanedev\LogViewer\Entities\Log  $log
+     * @param  \MatachanaInd\LogViewer\Entities\Log  $log
      * @param  bool                               $trans
      *
      * @return array

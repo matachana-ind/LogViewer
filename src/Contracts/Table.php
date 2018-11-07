@@ -1,9 +1,9 @@
-<?php namespace Arcanedev\LogViewer\Contracts;
+<?php namespace MatachanaInd\LogViewer\Contracts;
 
 /**
  * Interface  Table
  *
- * @package   Arcanedev\LogViewer\Contracts
+ * @package   MatachanaInd\LogViewer\Contracts
  * @author    ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 interface Table

@@ -1,12 +1,12 @@
-<?php namespace Arcanedev\LogViewer\Providers;
+<?php namespace MatachanaInd\LogViewer\Providers;
 
-use Arcanedev\LogViewer\Http\Routes\LogViewerRoute;
+use MatachanaInd\LogViewer\Http\Routes\LogViewerRoute;
 use Arcanedev\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 /**
  * Class     RouteServiceProvider
  *
- * @package  Arcanedev\LogViewer\Providers
+ * @package  MatachanaInd\LogViewer\Providers
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class RouteServiceProvider extends ServiceProvider

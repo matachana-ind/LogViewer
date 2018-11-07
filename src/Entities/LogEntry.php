@@ -1,4 +1,4 @@
-<?php namespace Arcanedev\LogViewer\Entities;
+<?php namespace MatachanaInd\LogViewer\Entities;
 
 use Carbon\Carbon;
 use Illuminate\Contracts\Support\Arrayable;
@@ -8,7 +8,7 @@ use JsonSerializable;
 /**
  * Class     LogEntry
  *
- * @package  Arcanedev\LogViewer\Entities
+ * @package  MatachanaInd\LogViewer\Entities
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class LogEntry implements Arrayable, Jsonable, JsonSerializable
@@ -113,7 +113,7 @@ class LogEntry implements Arrayable, Jsonable, JsonSerializable
      *
      * @param  string  $datetime
      *
-     * @return \Arcanedev\LogViewer\Entities\LogEntry
+     * @return \MatachanaInd\LogViewer\Entities\LogEntry
      */
     private function setDatetime($datetime)
     {

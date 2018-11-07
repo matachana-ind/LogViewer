@@ -1,11 +1,11 @@
-<?php namespace Arcanedev\LogViewer\Contracts\Utilities;
+<?php namespace MatachanaInd\LogViewer\Contracts\Utilities;
 
 use Illuminate\Contracts\Config\Repository as ConfigContract;
 
 /**
  * Interface  LogChecker
  *
- * @package   Arcanedev\LogViewer\Contracts\Utilities
+ * @package   MatachanaInd\LogViewer\Contracts\Utilities
  * @author    ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 interface LogChecker
@@ -41,7 +41,7 @@ interface LogChecker
     /**
      * Set the Filesystem instance.
      *
-     * @param  \Arcanedev\LogViewer\Contracts\Utilities\Filesystem  $filesystem
+     * @param  \MatachanaInd\LogViewer\Contracts\Utilities\Filesystem  $filesystem
      *
      * @return self
      */

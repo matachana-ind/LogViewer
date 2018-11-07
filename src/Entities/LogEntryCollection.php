@@ -1,13 +1,13 @@
-<?php namespace Arcanedev\LogViewer\Entities;
+<?php namespace MatachanaInd\LogViewer\Entities;
 
-use Arcanedev\LogViewer\Helpers\LogParser;
+use MatachanaInd\LogViewer\Helpers\LogParser;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 
 /**
  * Class     LogEntryCollection
  *
- * @package  Arcanedev\LogViewer\Entities
+ * @package  MatachanaInd\LogViewer\Entities
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class LogEntryCollection extends Collection

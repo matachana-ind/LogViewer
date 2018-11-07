@@ -1,11 +1,11 @@
-<?php namespace Arcanedev\LogViewer\Contracts;
+<?php namespace MatachanaInd\LogViewer\Contracts;
 
-use Arcanedev\LogViewer\Contracts\Utilities\Filesystem;
+use MatachanaInd\LogViewer\Contracts\Utilities\Filesystem;
 
 /**
  * Interface  Patternable
  *
- * @package   Arcanedev\LogViewer\Contracts
+ * @package   MatachanaInd\LogViewer\Contracts
  * @author    ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 interface Patternable

@@ -1,13 +1,13 @@
-<?php namespace Arcanedev\LogViewer\Tables;
+<?php namespace MatachanaInd\LogViewer\Tables;
 
-use Arcanedev\LogViewer\Contracts\Utilities\LogLevels as LogLevelsContract;
+use MatachanaInd\LogViewer\Contracts\Utilities\LogLevels as LogLevelsContract;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 
 /**
  * Class     StatsTable
  *
- * @package  Arcanedev\LogViewer\Tables
+ * @package  MatachanaInd\LogViewer\Tables
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class StatsTable extends AbstractTable
@@ -21,7 +21,7 @@ class StatsTable extends AbstractTable
      * Make a stats table instance.
      *
      * @param  array                                               $data
-     * @param  \Arcanedev\LogViewer\Contracts\Utilities\LogLevels  $levels
+     * @param  \MatachanaInd\LogViewer\Contracts\Utilities\LogLevels  $levels
      * @param  string|null                                         $locale
      *
      * @return self
