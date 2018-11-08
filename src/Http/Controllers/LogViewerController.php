@@ -136,7 +136,7 @@ class LogViewerController extends Controller
      * @param  string                    $level
      * @param  \Illuminate\Http\Request  $request
      *
-     * @return \Illuminate\View\View|\Illuminate\Http\RedirectResponse
+     * @return \Illuminate\View\View
      */
     public function search($date, $level = 'all', Request $request)
     {
@@ -201,9 +201,7 @@ class LogViewerController extends Controller
      */
     protected function view($view, $data = [], $mergeData = [])
     {
-        $theme = config('log-viewer.theme');
-
-        return view()->make("log-viewer::{$theme}.{$view}", $data, $mergeData);
+        return view('log-viewer::'.$view, $data, $mergeData);
     }
 
     /**

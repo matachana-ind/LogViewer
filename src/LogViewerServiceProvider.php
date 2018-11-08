@@ -83,8 +83,9 @@ class LogViewerServiceProvider extends PackageServiceProvider
         $this->singleton(Contracts\LogViewer::class, LogViewer::class);
 
         // Registering the Facade
-        if ($facade = $this->config()->get('log-viewer.facade')) {
-            $this->alias($facade, Facades\LogViewer::class);
-        }
+        $this->alias(
+            $this->config()->get('log-viewer.facade', 'LogViewer'),
+            Facades\LogViewer::class
+        );
     }
 }

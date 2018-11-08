@@ -44,13 +44,15 @@ class Log implements Arrayable, Jsonable, JsonSerializable
      * @param  string  $date
      * @param  string  $path
      * @param  string  $raw
+     * @param  array  $files
      */
-    public function __construct($date, $path, $raw)
+    public function __construct($date, $path, $raw, $files)
     {
         $this->date    = $date;
         $this->path    = $path;
         $this->file    = new SplFileInfo($path);
         $this->entries = (new LogEntryCollection)->load($raw);
+        $this->files   = $files;
     }
 
     /* -----------------------------------------------------------------
@@ -65,7 +67,7 @@ class Log implements Arrayable, Jsonable, JsonSerializable
      */
     public function getPath()
     {
-        return $this->path;
+        return $this->files;
     }
 
     /**
@@ -85,7 +87,12 @@ class Log implements Arrayable, Jsonable, JsonSerializable
      */
     public function size()
     {
-        return $this->formatSize($this->file->getSize());
+        $size_array = Array();
+        foreach ($this->files as $file)  {
+            $aux = new SplFileInfo($file);
+            array_push($size_array, $this->formatSize($aux->getSize()));
+        }
+        return $size_array;
     }
 
     /**
@@ -95,7 +102,12 @@ class Log implements Arrayable, Jsonable, JsonSerializable
      */
     public function createdAt()
     {
-        return Carbon::createFromTimestamp($this->file()->getATime());
+        $crea_array = Array();
+        foreach ($this->files as $file)  {
+            $aux = new SplFileInfo($file);
+            array_push($crea_array, Carbon::createFromTimestamp($aux->getATime()));
+        }
+        return $crea_array;
     }
 
     /**
@@ -105,7 +117,12 @@ class Log implements Arrayable, Jsonable, JsonSerializable
      */
     public function updatedAt()
     {
-        return Carbon::createFromTimestamp($this->file()->getMTime());
+        $up_array = Array();
+        foreach ($this->files as $file)  {
+            $aux = new SplFileInfo($file);
+            array_push($up_array, Carbon::createFromTimestamp($aux->getMTime()));
+        }
+        return $up_array;
     }
 
     /* -----------------------------------------------------------------
@@ -119,12 +136,13 @@ class Log implements Arrayable, Jsonable, JsonSerializable
      * @param  string  $date
      * @param  string  $path
      * @param  string  $raw
+     * @param  array  $files
      *
      * @return self
      */
-    public static function make($date, $path, $raw)
+    public static function make($date, $path, $raw, $files)
     {
-        return new self($date, $path, $raw);
+        return new self($date, $path, $raw, $files);
     }
 
     /**
@@ -202,7 +220,8 @@ class Log implements Arrayable, Jsonable, JsonSerializable
         return [
             'date'    => $this->date,
             'path'    => $this->path,
-            'entries' => $this->entries->toArray()
+            'entries' => $this->entries->toArray(),
+            'files'    => $this->files
         ];
     }
 

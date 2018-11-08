@@ -4,7 +4,7 @@ use MatachanaInd\LogViewer\Contracts\Utilities\Filesystem as FilesystemContract;
 use MatachanaInd\LogViewer\Contracts\Utilities\Factory as FactoryContract;
 use MatachanaInd\LogViewer\Contracts\Utilities\LogLevels as LogLevelsContract;
 use MatachanaInd\LogViewer\Contracts\LogViewer as LogViewerContract;
-
+use ZipArchive;
 /**
  * Class     LogViewer
  *
@@ -206,13 +206,29 @@ class LogViewer implements LogViewerContract
      */
     public function download($date, $filename = null, $headers = [])
     {
-        if (is_null($filename)) {
-            $filename = "laravel-{$date}.log";
+        $files = $this->filesystem->dates(true);
+        $filter = [];
+        foreach ($files as $key => $value) {
+            if ($key == $date) {
+                $filter = $value;
+            }
         }
 
-        $path = $this->filesystem->path($date);
-
-        return response()->download($path, $filename, $headers);
+        $zipname = 'file.zip';
+        $zip = new ZipArchive;
+        $zip->open($zipname, ZipArchive::CREATE);
+        $filename = "logs_$date.zip";
+        foreach ($filter as $file) {
+            $zip->addFile($file, basename($file));
+        }
+        $zip->close();
+        
+        $headers = array(
+              'Content-Type: application/zip',
+              'Content-disposition: attachment; filename='.$zipname,
+              'Content-Length: ' . filesize($zipname)
+        );
+        return response()->download($zipname, $filename, $headers);
     }
 
     /**

@@ -124,5 +124,5 @@ interface Filesystem extends Patternable
      *
      * @return string
      */
-    public function path($date);
+    //public function path($date);
 }

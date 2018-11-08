@@ -1,8 +1,8 @@
 <?php namespace MatachanaInd\LogViewer\Entities;
 
 use MatachanaInd\LogViewer\Helpers\LogParser;
+use Arcanedev\Support\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Support\Collection;
 
 /**
  * Class     LogEntryCollection

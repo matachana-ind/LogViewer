@@ -2,8 +2,8 @@
 
 use MatachanaInd\LogViewer\Contracts\Utilities\Filesystem as FilesystemContract;
 use MatachanaInd\LogViewer\Exceptions\LogNotFoundException;
+use Arcanedev\Support\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Support\Collection;
 
 /**
  * Class     LogCollection
@@ -71,10 +71,11 @@ class LogCollection extends Collection
      */
     private function load()
     {
-        foreach($this->filesystem->dates(true) as $date => $path) {
-            $this->put($date, Log::make($date, $path, $this->filesystem->read($date)));
+        foreach($this->filesystem->dates(true) as $date => $files) {
+            foreach($files as $file) {
+                $this->put($date, Log::make($date, $file, $this->filesystem->read($date), $files));
+            }
         }
-
         return $this;
     }
 

@@ -206,14 +206,26 @@ class Filesystem implements FilesystemContract
      */
     public function dates($withPaths = false)
     {
+        $combined = [];
         $files = array_reverse($this->logs());
         $dates = $this->extractDates($files);
 
         if ($withPaths) {
-            $dates = array_combine($dates, $files); // [date => file]
+            $combined = $this->combo($dates, $files);
         }
+        return $combined;
+    }
 
-        return $dates;
+    public function combo($a, $b) {
+        $group = [];
+        foreach ($a as $key => $value)  {
+            //print_r($value);
+            if (!isset($group[$value])) {
+                $group[$value] = [];
+            }
+            array_push($group[$value], $b[$key]);
+        }
+        return $group;
     }
 
     /**
@@ -228,15 +240,85 @@ class Filesystem implements FilesystemContract
     public function read($date)
     {
         try {
-            $log = $this->filesystem->get(
-                $this->getLogPath($date)
-            );
+            $files = $this->dates(true);
+            $filter = [];
+            foreach ($files as $key => $value) {
+                if ($key == $date) {
+                    $filter = $value;
+                }
+            }
+            
+            $log = "";
+            foreach ($filter as $key => $value) {
+                if ( ! $this->filesystem->exists($value)) {
+                    throw new FilesystemException("The log(s) could not be located at : $value");
+                }
+                $log .= $this->filesystem->get(realpath($value));
+            }
         }
         catch (\Exception $e) {
             throw new FilesystemException($e->getMessage());
         }
+        $result = $this->order_text($log);
+        return $result;
+    }
 
-        return $log;
+    public function order_text($log)
+    {
+        $regex = '/\[([0-9]{4}-[0-9]{2}-[0-9]{2})\s([0-9]{2}:[0-9]{2}:[0-9]{2})\]\s{1}([a-zA-Z]+)\.([a-zA-Z]+)\:\s(.*)/';
+
+        $result = Array();
+        $j = 0;
+        foreach(preg_split("/((\r?\n)|(\r\n?))/", $log) as $line){
+            if (preg_match($regex, $line, $matches, PREG_OFFSET_CAPTURE)) {
+                $last = end($matches);
+                $line = substr($line, $last[1] + strlen($last[0]) + 1);
+                $strings = Array();
+                /*
+                INPUT ARRAY = matches
+                Group 1.	`2018-11-02`
+                Group 2.	`11:08:36`
+                Group 3.	`local`
+                Group 4.	`ERROR`
+                Group 5.	`xxxxxx`
+                */
+                for ($i = 1; $i < 6; $i++) {
+                    if ($i == 2) {
+                        $strings[0] .= " " . $matches[$i][0];
+                    } else {
+                        array_push($strings, $matches[$i][0]);
+                    }
+                }
+                /*
+                OUTPUT ARRAY = matches
+                [0] Group 1.	`2018-11-02 11:08:36`
+                [1] Group 2.	`local`
+                [2] Group 3.	`ERROR`
+                [3] Group 4.	`xxxxxx`
+                */
+                array_push($result, $strings);
+                $j++;
+                $first = True;
+            } else {
+                $result[$j-1][3] .= "\n$line";
+            }
+            if (substr($result[$j-1][3], -1) == "\n") {
+                $result[$j-1][3] = substr($result[$j-1][3], 0, -1);
+            }
+        }
+        $normal_array = $result;
+        $sort_array = $result;
+
+        usort($sort_array, function($a, $b) {
+            return strtotime($a[0]) - strtotime($b[0]);
+        });
+        // From array to text
+        $text_output = "";
+        foreach ($sort_array as $data) {
+            $text_output .= "[" . $data[0] . "] " . $data[1] . "." . $data[2] . ": " . $data[3] . "\n";
+        }
+
+        return $text_output;
     }
 
     /**
@@ -250,27 +332,21 @@ class Filesystem implements FilesystemContract
      */
     public function delete($date)
     {
-        $path = $this->getLogPath($date);
-
-        // @codeCoverageIgnoreStart
-        if ( ! $this->filesystem->delete($path)) {
-            throw new FilesystemException('There was an error deleting the log.');
+        $files = $this->dates(true);
+        $filter = [];
+        foreach ($files as $key => $value) {
+            if ($key == $date) {
+                $filter = $value;
+            }
         }
-        // @codeCoverageIgnoreEnd
-
+        foreach ($filter as $key => $value) {
+            if ( ! $this->filesystem->exists(realpath($value))) {
+                throw new FilesystemException("The log(s) could not be located at : $value");
+            } elseif ( ! $this->filesystem->delete(realpath($value))) {
+                throw new FilesystemException('There was an error deleting the log.');
+            }
+        }
         return true;
-    }
-
-    /**
-     * Get the log file path.
-     *
-     * @param  string  $date
-     *
-     * @return string
-     */
-    public function path($date)
-    {
-        return $this->getLogPath($date);
     }
 
     /* -----------------------------------------------------------------
@@ -292,26 +368,6 @@ class Filesystem implements FilesystemContract
         );
 
         return array_filter(array_map('realpath', $files));
-    }
-
-    /**
-     * Get the log file path.
-     *
-     * @param  string  $date
-     *
-     * @return string
-     *
-     * @throws \MatachanaInd\LogViewer\Exceptions\FilesystemException
-     */
-    private function getLogPath($date)
-    {
-        $path = $this->storagePath.DS.$this->prefixPattern.$date.$this->extension;
-
-        if ( ! $this->filesystem->exists($path)) {
-            throw new FilesystemException("The log(s) could not be located at : $path");
-        }
-
-        return realpath($path);
     }
 
     /**
