@@ -1,12 +1,12 @@
-<?php namespace Arcanedev\LogViewer\Tests\Entities;
+<?php namespace MatachanaInd\LogViewer\Tests\Entities;
 
-use Arcanedev\LogViewer\Entities\LogCollection;
-use Arcanedev\LogViewer\Tests\TestCase;
+use MatachanaInd\LogViewer\Entities\LogCollection;
+use MatachanaInd\LogViewer\Tests\TestCase;
 
 /**
  * Class     LogCollectionTest
  *
- * @package  Arcanedev\LogViewer\Tests\Entities
+ * @package  MatachanaInd\LogViewer\Tests\Entities
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class LogCollectionTest extends TestCase
@@ -16,7 +16,7 @@ class LogCollectionTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @var  \Arcanedev\LogViewer\Entities\LogCollection */
+    /** @var  \MatachanaInd\LogViewer\Entities\LogCollection */
     private $logs;
 
     /* -----------------------------------------------------------------
@@ -169,7 +169,7 @@ class LogCollectionTest extends TestCase
     /**
      * @test
      *
-     * @expectedException        \Arcanedev\LogViewer\Exceptions\LogNotFoundException
+     * @expectedException        \MatachanaInd\LogViewer\Exceptions\LogNotFoundException
      * @expectedExceptionMessage Log not found in this date [2222-01-01]
      */
     public function it_must_throw_a_log_not_found_on_get_method()
@@ -180,7 +180,7 @@ class LogCollectionTest extends TestCase
     /**
      * @test
      *
-     * @expectedException        \Arcanedev\LogViewer\Exceptions\LogNotFoundException
+     * @expectedException        \MatachanaInd\LogViewer\Exceptions\LogNotFoundException
      * @expectedExceptionMessage Log not found in this date [2222-01-01]
      */
     public function it_must_throw_a_log_not_found_on_log_method()

@@ -1,12 +1,12 @@
-<?php namespace Arcanedev\LogViewer\Tests\Entities;
+<?php namespace MatachanaInd\LogViewer\Tests\Entities;
 
-use Arcanedev\LogViewer\Entities\LogEntry;
-use Arcanedev\LogViewer\Tests\TestCase;
+use MatachanaInd\LogViewer\Entities\LogEntry;
+use MatachanaInd\LogViewer\Tests\TestCase;
 
 /**
  * Class     LogEntryTest
  *
- * @package  Arcanedev\LogViewer\Tests\Entities
+ * @package  MatachanaInd\LogViewer\Tests\Entities
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class LogEntryTest extends TestCase
@@ -16,7 +16,7 @@ class LogEntryTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @var  \Arcanedev\LogViewer\Entities\LogEntry */
+    /** @var  \MatachanaInd\LogViewer\Entities\LogEntry */
     private $entry;
 
     /* -----------------------------------------------------------------

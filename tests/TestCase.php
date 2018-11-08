@@ -1,8 +1,8 @@
-<?php namespace Arcanedev\LogViewer\Tests;
+<?php namespace MatachanaInd\LogViewer\Tests;
 
-use Arcanedev\LogViewer\Entities\Log;
-use Arcanedev\LogViewer\Entities\LogEntry;
-use Arcanedev\LogViewer\Entities\LogEntryCollection;
+use MatachanaInd\LogViewer\Entities\Log;
+use MatachanaInd\LogViewer\Entities\LogEntry;
+use MatachanaInd\LogViewer\Entities\LogEntryCollection;
 use Carbon\Carbon;
 use Illuminate\Support\Arr;
 use Orchestra\Testbench\TestCase as BaseTestCase;
@@ -12,7 +12,7 @@ use ReflectionClass;
 /**
  * Class     TestCase
  *
- * @package  Arcanedev\LogViewer\Tests
+ * @package  MatachanaInd\LogViewer\Tests
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 abstract class TestCase extends BaseTestCase
@@ -60,7 +60,7 @@ abstract class TestCase extends BaseTestCase
     protected function getPackageProviders($app)
     {
         return [
-            \Arcanedev\LogViewer\LogViewerServiceProvider::class,
+            \MatachanaInd\LogViewer\LogViewerServiceProvider::class,
         ];
     }
 
@@ -102,7 +102,7 @@ abstract class TestCase extends BaseTestCase
     /**
      * Assert Log object.
      *
-     * @param  \Arcanedev\LogViewer\Entities\Log  $log
+     * @param  \MatachanaInd\LogViewer\Entities\Log  $log
      * @param  string                             $date
      */
     protected static function assertLog(Log $log, $date)
@@ -115,7 +115,7 @@ abstract class TestCase extends BaseTestCase
      * Assert Log entries object.
      *
      * @param  string                                            $date
-     * @param  \Arcanedev\LogViewer\Entities\LogEntryCollection  $entries
+     * @param  \MatachanaInd\LogViewer\Entities\LogEntryCollection  $entries
      */
     protected static function assertLogEntries($date, LogEntryCollection $entries)
     {
@@ -128,7 +128,7 @@ abstract class TestCase extends BaseTestCase
      * Assert log entry object.
      *
      * @param  string                                  $date
-     * @param  \Arcanedev\LogViewer\Entities\LogEntry  $entry
+     * @param  \MatachanaInd\LogViewer\Entities\LogEntry  $entry
      */
     protected static function assertLogEntry($date, LogEntry $entry)
     {
@@ -273,11 +273,11 @@ abstract class TestCase extends BaseTestCase
     /**
      * Get Filesystem Utility instance.
      *
-     * @return \Arcanedev\LogViewer\Utilities\Filesystem
+     * @return \MatachanaInd\LogViewer\Utilities\Filesystem
      */
     protected function filesystem()
     {
-        return $this->app->make(\Arcanedev\LogViewer\Contracts\Utilities\Filesystem::class);
+        return $this->app->make(\MatachanaInd\LogViewer\Contracts\Utilities\Filesystem::class);
     }
 
     /**
@@ -339,7 +339,7 @@ abstract class TestCase extends BaseTestCase
      *
      * @param  string  $date
      *
-     * @return \Arcanedev\LogViewer\Entities\Log
+     * @return \MatachanaInd\LogViewer\Entities\Log
      */
     protected function getLog($date)
     {

@@ -1,12 +1,12 @@
-<?php namespace Arcanedev\LogViewer\Tests\Utilities;
+<?php namespace MatachanaInd\LogViewer\Tests\Utilities;
 
-use Arcanedev\LogViewer\Utilities\LogLevels;
-use Arcanedev\LogViewer\Tests\TestCase;
+use MatachanaInd\LogViewer\Utilities\LogLevels;
+use MatachanaInd\LogViewer\Tests\TestCase;
 
 /**
  * Class     LogLevelsTest
  *
- * @package  Arcanedev\LogViewer\Tests\Utilities
+ * @package  MatachanaInd\LogViewer\Tests\Utilities
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class LogLevelsTest extends TestCase
@@ -16,7 +16,7 @@ class LogLevelsTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @var  \Arcanedev\LogViewer\Utilities\LogLevels  */
+    /** @var  \MatachanaInd\LogViewer\Utilities\LogLevels  */
     private $levels;
 
     /* -----------------------------------------------------------------
@@ -28,7 +28,7 @@ class LogLevelsTest extends TestCase
     {
         parent::setUp();
 
-        $this->levels = $this->app->make(\Arcanedev\LogViewer\Contracts\Utilities\LogLevels::class);
+        $this->levels = $this->app->make(\MatachanaInd\LogViewer\Contracts\Utilities\LogLevels::class);
     }
 
     public function tearDown()

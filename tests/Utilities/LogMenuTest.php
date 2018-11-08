@@ -1,12 +1,12 @@
-<?php namespace Arcanedev\LogViewer\Tests\Utilities;
+<?php namespace MatachanaInd\LogViewer\Tests\Utilities;
 
-use Arcanedev\LogViewer\Tests\TestCase;
-use Arcanedev\LogViewer\Utilities\LogMenu;
+use MatachanaInd\LogViewer\Tests\TestCase;
+use MatachanaInd\LogViewer\Utilities\LogMenu;
 
 /**
  * Class     LogMenuTest
  *
- * @package  Arcanedev\LogViewer\Tests\Utilities
+ * @package  MatachanaInd\LogViewer\Tests\Utilities
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class LogMenuTest extends TestCase
@@ -16,7 +16,7 @@ class LogMenuTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @var  \Arcanedev\LogViewer\Utilities\LogMenu */
+    /** @var  \MatachanaInd\LogViewer\Utilities\LogMenu */
     private $menu;
 
     /* -----------------------------------------------------------------
@@ -28,7 +28,7 @@ class LogMenuTest extends TestCase
     {
         parent::setUp();
 
-        $this->menu = $this->app->make(\Arcanedev\LogViewer\Contracts\Utilities\LogMenu::class);
+        $this->menu = $this->app->make(\MatachanaInd\LogViewer\Contracts\Utilities\LogMenu::class);
     }
 
     protected function tearDown()

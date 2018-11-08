@@ -1,12 +1,12 @@
-<?php namespace Arcanedev\LogViewer\Tests;
+<?php namespace MatachanaInd\LogViewer\Tests;
 
-use Arcanedev\LogViewer\Entities\Log;
-use Arcanedev\LogViewer\LogViewer;
+use MatachanaInd\LogViewer\Entities\Log;
+use MatachanaInd\LogViewer\LogViewer;
 
 /**
  * Class     LogViewerTest
  *
- * @package  Arcanedev\LogViewer\Tests
+ * @package  MatachanaInd\LogViewer\Tests
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class LogViewerTest extends TestCase
@@ -16,7 +16,7 @@ class LogViewerTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @var  \Arcanedev\LogViewer\LogViewer */
+    /** @var  \MatachanaInd\LogViewer\LogViewer */
     private $logViewer;
 
     /* -----------------------------------------------------------------
@@ -28,7 +28,7 @@ class LogViewerTest extends TestCase
     {
         parent::setUp();
 
-        $this->logViewer = $this->app->make(\Arcanedev\LogViewer\Contracts\LogViewer::class);
+        $this->logViewer = $this->app->make(\MatachanaInd\LogViewer\Contracts\LogViewer::class);
     }
 
     protected function tearDown()

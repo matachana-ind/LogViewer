@@ -1,13 +1,13 @@
-<?php namespace Arcanedev\LogViewer\Tests\Tables;
+<?php namespace MatachanaInd\LogViewer\Tests\Tables;
 
-use Arcanedev\LogViewer\Contracts\Table as TableContract;
-use Arcanedev\LogViewer\Tables\StatsTable;
-use Arcanedev\LogViewer\Tests\TestCase;
+use MatachanaInd\LogViewer\Contracts\Table as TableContract;
+use MatachanaInd\LogViewer\Tables\StatsTable;
+use MatachanaInd\LogViewer\Tests\TestCase;
 
 /**
  * Class     StatsTableTest
  *
- * @package  Arcanedev\LogViewer\Tests\Tables
+ * @package  MatachanaInd\LogViewer\Tests\Tables
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class StatsTableTest extends TestCase
@@ -17,7 +17,7 @@ class StatsTableTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @var  \Arcanedev\LogViewer\Tables\StatsTable */
+    /** @var  \MatachanaInd\LogViewer\Tables\StatsTable */
     private $table;
 
     /** @var array */
@@ -113,8 +113,8 @@ class StatsTableTest extends TestCase
     /** @test */
     public function it_can_get_stats_table_via_log_viewer()
     {
-        /** @var  \Arcanedev\LogViewer\Contracts\LogViewer  $logViewer */
-        $logViewer = $this->app->make(\Arcanedev\LogViewer\Contracts\LogViewer::class);
+        /** @var  \MatachanaInd\LogViewer\Contracts\LogViewer  $logViewer */
+        $logViewer = $this->app->make(\MatachanaInd\LogViewer\Contracts\LogViewer::class);
 
         static::assertTable($logViewer->statsTable());
     }
@@ -122,8 +122,8 @@ class StatsTableTest extends TestCase
     /** @test */
     public function it_can_get_stats_table_via_log_factory()
     {
-        /** @var  \Arcanedev\LogViewer\Contracts\Utilities\Factory  $logFactory */
-        $logFactory = $this->app->make(\Arcanedev\LogViewer\Contracts\Utilities\Factory::class);
+        /** @var  \MatachanaInd\LogViewer\Contracts\Utilities\Factory  $logFactory */
+        $logFactory = $this->app->make(\MatachanaInd\LogViewer\Contracts\Utilities\Factory::class);
 
         $this->assertTable($logFactory->statsTable());
     }
@@ -136,7 +136,7 @@ class StatsTableTest extends TestCase
     /**
      * Assert table instance.
      *
-     * @param  \Arcanedev\LogViewer\Contracts\Table  $table
+     * @param  \MatachanaInd\LogViewer\Contracts\Table  $table
      */
     protected static function assertTable(TableContract $table)
     {
@@ -148,7 +148,7 @@ class StatsTableTest extends TestCase
     /**
      * Assert table header.
      *
-     * @param  \Arcanedev\LogViewer\Contracts\Table  $table
+     * @param  \MatachanaInd\LogViewer\Contracts\Table  $table
      */
     protected static function assertTableHeader(TableContract $table)
     {
@@ -161,7 +161,7 @@ class StatsTableTest extends TestCase
     /**
      * Assert table rows.
      *
-     * @param  \Arcanedev\LogViewer\Contracts\Table  $table
+     * @param  \MatachanaInd\LogViewer\Contracts\Table  $table
      */
     protected static function assertTableRows(TableContract $table)
     {
@@ -190,7 +190,7 @@ class StatsTableTest extends TestCase
     /**
      * Assert table footer.
      *
-     * @param  \Arcanedev\LogViewer\Contracts\Table  $table
+     * @param  \MatachanaInd\LogViewer\Contracts\Table  $table
      */
     protected static function assertTableFooter(TableContract $table)
     {
@@ -207,20 +207,20 @@ class StatsTableTest extends TestCase
     /**
      * Get the LogViewer instance.
      *
-     * @return \Arcanedev\LogViewer\Contracts\LogViewer
+     * @return \MatachanaInd\LogViewer\Contracts\LogViewer
      */
     protected function getLogViewerInstance()
     {
-        return $this->app->make(\Arcanedev\LogViewer\Contracts\LogViewer::class);
+        return $this->app->make(\MatachanaInd\LogViewer\Contracts\LogViewer::class);
     }
 
     /**
      * Get the LogLevels instance.
      *
-     * @return \Arcanedev\LogViewer\Contracts\Utilities\LogLevels
+     * @return \MatachanaInd\LogViewer\Contracts\Utilities\LogLevels
      */
     protected function getLogLevelsInstance()
     {
-        return $this->app->make(\Arcanedev\LogViewer\Contracts\Utilities\LogLevels::class);
+        return $this->app->make(\MatachanaInd\LogViewer\Contracts\Utilities\LogLevels::class);
     }
 }

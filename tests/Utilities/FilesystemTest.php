@@ -1,12 +1,12 @@
-<?php namespace Arcanedev\LogViewer\Tests\Utilities;
+<?php namespace MatachanaInd\LogViewer\Tests\Utilities;
 
-use Arcanedev\LogViewer\Tests\TestCase;
-use Arcanedev\LogViewer\Utilities\Filesystem;
+use MatachanaInd\LogViewer\Tests\TestCase;
+use MatachanaInd\LogViewer\Utilities\Filesystem;
 
 /**
  * Class     FilesystemTest
  *
- * @package  Arcanedev\LogViewer\Tests\Utilities
+ * @package  MatachanaInd\LogViewer\Tests\Utilities
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class FilesystemTest extends TestCase
@@ -16,7 +16,7 @@ class FilesystemTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @var  \Arcanedev\LogViewer\Utilities\Filesystem */
+    /** @var  \MatachanaInd\LogViewer\Utilities\Filesystem */
     private $filesystem;
 
     /* -----------------------------------------------------------------
@@ -173,7 +173,7 @@ class FilesystemTest extends TestCase
     /**
      * @test
      *
-     * @expectedException \Arcanedev\LogViewer\Exceptions\FilesystemException
+     * @expectedException \MatachanaInd\LogViewer\Exceptions\FilesystemException
      */
     public function it_must_throw_a_filesystem_exception_on_read()
     {
@@ -183,7 +183,7 @@ class FilesystemTest extends TestCase
     /**
      * @test
      *
-     * @expectedException \Arcanedev\LogViewer\Exceptions\FilesystemException
+     * @expectedException \MatachanaInd\LogViewer\Exceptions\FilesystemException
      */
     public function it_must_throw_a_filesystem_exception_on_delete()
     {

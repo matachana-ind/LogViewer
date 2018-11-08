@@ -1,12 +1,12 @@
-<?php namespace Arcanedev\LogViewer\Tests\Providers;
+<?php namespace MatachanaInd\LogViewer\Tests\Providers;
 
-use Arcanedev\LogViewer\Providers\CommandsServiceProvider;
-use Arcanedev\LogViewer\Tests\TestCase;
+use MatachanaInd\LogViewer\Providers\CommandsServiceProvider;
+use MatachanaInd\LogViewer\Tests\TestCase;
 
 /**
  * Class     CommandsServiceProviderTest
  *
- * @package  Arcanedev\LogViewer\Tests\Providers
+ * @package  MatachanaInd\LogViewer\Tests\Providers
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class CommandsServiceProviderTest extends TestCase
@@ -16,7 +16,7 @@ class CommandsServiceProviderTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @var  \Arcanedev\LogViewer\Providers\CommandsServiceProvider */
+    /** @var  \MatachanaInd\LogViewer\Providers\CommandsServiceProvider */
     private $provider;
 
     /* -----------------------------------------------------------------
@@ -61,9 +61,9 @@ class CommandsServiceProviderTest extends TestCase
     public function it_can_provides()
     {
         $expected = [
-            \Arcanedev\LogViewer\Commands\PublishCommand::class,
-            \Arcanedev\LogViewer\Commands\StatsCommand::class,
-            \Arcanedev\LogViewer\Commands\CheckCommand::class,
+            \MatachanaInd\LogViewer\Commands\PublishCommand::class,
+            \MatachanaInd\LogViewer\Commands\StatsCommand::class,
+            \MatachanaInd\LogViewer\Commands\CheckCommand::class,
         ];
 
         static::assertSame($expected, $this->provider->provides());

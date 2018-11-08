@@ -1,13 +1,13 @@
-<?php namespace Arcanedev\LogViewer\Tests\Providers;
+<?php namespace MatachanaInd\LogViewer\Tests\Providers;
 
-use Arcanedev\LogViewer\Providers\UtilitiesServiceProvider;
-use Arcanedev\LogViewer\Tests\TestCase;
-use Arcanedev\LogViewer\Contracts;
+use MatachanaInd\LogViewer\Providers\UtilitiesServiceProvider;
+use MatachanaInd\LogViewer\Tests\TestCase;
+use MatachanaInd\LogViewer\Contracts;
 
 /**
  * Class     UtilitiesServiceProviderTest
  *
- * @package  Arcanedev\LogViewer\Tests\Providers
+ * @package  MatachanaInd\LogViewer\Tests\Providers
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class UtilitiesServiceProviderTest extends TestCase
@@ -17,7 +17,7 @@ class UtilitiesServiceProviderTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @var  \Arcanedev\LogViewer\Providers\UtilitiesServiceProvider */
+    /** @var  \MatachanaInd\LogViewer\Providers\UtilitiesServiceProvider */
     private $provider;
 
     /* -----------------------------------------------------------------

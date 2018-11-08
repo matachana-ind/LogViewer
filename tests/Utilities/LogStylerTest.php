@@ -1,12 +1,12 @@
-<?php namespace Arcanedev\LogViewer\Tests\Utilities;
+<?php namespace MatachanaInd\LogViewer\Tests\Utilities;
 
-use Arcanedev\LogViewer\Tests\TestCase;
-use Arcanedev\LogViewer\Utilities\LogStyler;
+use MatachanaInd\LogViewer\Tests\TestCase;
+use MatachanaInd\LogViewer\Utilities\LogStyler;
 
 /**
  * Class     LogStylerTest
  *
- * @package  Arcanedev\LogViewer\Tests\Utilities
+ * @package  MatachanaInd\LogViewer\Tests\Utilities
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class LogStylerTest extends TestCase
@@ -16,7 +16,7 @@ class LogStylerTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @var  \Arcanedev\LogViewer\Utilities\LogStyler */
+    /** @var  \MatachanaInd\LogViewer\Utilities\LogStyler */
     private $styler;
 
     /* -----------------------------------------------------------------
@@ -28,7 +28,7 @@ class LogStylerTest extends TestCase
     {
         parent::setUp();
 
-        $this->styler = $this->app->make(\Arcanedev\LogViewer\Contracts\Utilities\LogStyler::class);
+        $this->styler = $this->app->make(\MatachanaInd\LogViewer\Contracts\Utilities\LogStyler::class);
     }
 
     protected function tearDown()

@@ -1,11 +1,11 @@
-<?php namespace Arcanedev\LogViewer\Tests;
+<?php namespace MatachanaInd\LogViewer\Tests;
 
-use Arcanedev\LogViewer\LogViewerServiceProvider;
+use MatachanaInd\LogViewer\LogViewerServiceProvider;
 
 /**
  * Class     LogViewerServiceProviderTest
  *
- * @package  Arcanedev\LogViewer\Tests
+ * @package  MatachanaInd\LogViewer\Tests
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class LogViewerServiceProviderTest extends TestCase
@@ -61,7 +61,7 @@ class LogViewerServiceProviderTest extends TestCase
     public function it_can_provides()
     {
         $expected = [
-            \Arcanedev\LogViewer\Contracts\LogViewer::class,
+            \MatachanaInd\LogViewer\Contracts\LogViewer::class,
         ];
 
         $this->assertSame($expected, $this->provider->provides());

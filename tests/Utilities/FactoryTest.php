@@ -1,12 +1,12 @@
-<?php namespace Arcanedev\LogViewer\Tests\Utilities;
+<?php namespace MatachanaInd\LogViewer\Tests\Utilities;
 
-use Arcanedev\LogViewer\Tests\TestCase;
-use Arcanedev\LogViewer\Utilities\Factory;
+use MatachanaInd\LogViewer\Tests\TestCase;
+use MatachanaInd\LogViewer\Utilities\Factory;
 
 /**
  * Class     FactoryTest
  *
- * @package  Arcanedev\LogViewer\Tests\Utilities
+ * @package  MatachanaInd\LogViewer\Tests\Utilities
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class FactoryTest extends TestCase
@@ -16,7 +16,7 @@ class FactoryTest extends TestCase
      | -----------------------------------------------------------------
      */
 
-    /** @var  \Arcanedev\LogViewer\Contracts\Utilities\Factory */
+    /** @var  \MatachanaInd\LogViewer\Contracts\Utilities\Factory */
     private $logFactory;
 
     /* -----------------------------------------------------------------
@@ -28,7 +28,7 @@ class FactoryTest extends TestCase
     {
         parent::setUp();
 
-        $this->logFactory = $this->app->make(\Arcanedev\LogViewer\Contracts\Utilities\Factory::class);
+        $this->logFactory = $this->app->make(\MatachanaInd\LogViewer\Contracts\Utilities\Factory::class);
     }
 
     protected function tearDown()
@@ -53,8 +53,8 @@ class FactoryTest extends TestCase
     public function it_can_get_filesystem_object()
     {
         $expectations = [
-            \Arcanedev\LogViewer\Contracts\Utilities\Filesystem::class,
-            \Arcanedev\LogViewer\Utilities\Filesystem::class,
+            \MatachanaInd\LogViewer\Contracts\Utilities\Filesystem::class,
+            \MatachanaInd\LogViewer\Utilities\Filesystem::class,
         ];
 
         foreach ($expectations as $expected) {
@@ -66,8 +66,8 @@ class FactoryTest extends TestCase
     public function it_can_get_levels_object()
     {
         $expectations = [
-            \Arcanedev\LogViewer\Contracts\Utilities\LogLevels::class,
-            \Arcanedev\LogViewer\Utilities\LogLevels::class,
+            \MatachanaInd\LogViewer\Contracts\Utilities\LogLevels::class,
+            \MatachanaInd\LogViewer\Utilities\LogLevels::class,
         ];
 
         foreach ($expectations as $expected) {
@@ -99,7 +99,7 @@ class FactoryTest extends TestCase
     {
         $logs = $this->logFactory->all();
 
-        static::assertInstanceOf(\Arcanedev\LogViewer\Entities\LogCollection::class, $logs);
+        static::assertInstanceOf(\MatachanaInd\LogViewer\Entities\LogCollection::class, $logs);
         static::assertCount(2, $logs);
         static::assertSame(2, $logs->count());
     }
@@ -228,7 +228,7 @@ class FactoryTest extends TestCase
     /**
      * @test
      *
-     * @expectedException \Arcanedev\LogViewer\Exceptions\LogNotFoundException
+     * @expectedException \MatachanaInd\LogViewer\Exceptions\LogNotFoundException
      */
     public function it_must_throw_a_filesystem_exception()
     {

@@ -1,12 +1,12 @@
 <?php
 
-use Arcanedev\LogViewer\Contracts;
+use MatachanaInd\LogViewer\Contracts;
 
 if ( ! function_exists('log_viewer')) {
     /**
      * Get the LogViewer instance.
      *
-     * @return Arcanedev\LogViewer\Contracts\LogViewer
+     * @return MatachanaInd\LogViewer\Contracts\LogViewer
      */
     function log_viewer()
     {
@@ -18,7 +18,7 @@ if ( ! function_exists('log_levels')) {
     /**
      * Get the LogLevels instance.
      *
-     * @return Arcanedev\LogViewer\Contracts\Utilities\LogLevels
+     * @return MatachanaInd\LogViewer\Contracts\Utilities\LogLevels
      */
     function log_levels()
     {
@@ -30,7 +30,7 @@ if ( ! function_exists('log_menu')) {
     /**
      * Get the LogMenu instance.
      *
-     * @return Arcanedev\LogViewer\Contracts\Utilities\LogMenu
+     * @return MatachanaInd\LogViewer\Contracts\Utilities\LogMenu
      */
     function log_menu()
     {
@@ -42,7 +42,7 @@ if ( ! function_exists('log_styler')) {
     /**
      * Get the LogStyler instance.
      *
-     * @return Arcanedev\LogViewer\Contracts\Utilities\LogStyler
+     * @return MatachanaInd\LogViewer\Contracts\Utilities\LogStyler
      */
     function log_styler()
     {

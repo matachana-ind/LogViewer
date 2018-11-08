@@ -1,11 +1,11 @@
-<?php namespace Arcanedev\LogViewer\Tests\Commands;
+<?php namespace MatachanaInd\LogViewer\Tests\Commands;
 
-use Arcanedev\LogViewer\Tests\TestCase;
+use MatachanaInd\LogViewer\Tests\TestCase;
 
 /**
  * Class     StatsCommandTest
  *
- * @package  Arcanedev\LogViewer\Tests\Commands
+ * @package  MatachanaInd\LogViewer\Tests\Commands
  * @author   ARCANEDEV <arcanedev.maroc@gmail.com>
  */
 class StatsCommandTest extends TestCase
