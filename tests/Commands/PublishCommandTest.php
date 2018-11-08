@@ -113,7 +113,7 @@ class PublishCommandTest extends TestCase
 
         static::assertEmpty(
             $missing = array_diff($locales, self::$locales),
-            'The locales ['.implode(', ', $missing).'] are missing in the Arcanedev\\LogViewer\\Tests\\TestCase::$locales (line 29) for tests purposes.'
+            'The locales ['.implode(', ', $missing).'] are missing in the MatachanaInd\\LogViewer\\Tests\\TestCase::$locales (line 29) for tests purposes.'
         );
 
         foreach ($directories as $directory) {
