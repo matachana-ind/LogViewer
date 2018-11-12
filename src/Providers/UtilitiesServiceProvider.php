@@ -103,11 +103,15 @@ class UtilitiesServiceProvider extends ServiceProvider
             $filesystem = new Utilities\Filesystem($files, $config->get('log-viewer.storage-path'));
 
             $pattern = $config->get('log-viewer.pattern', []);
+            $patternRealTime = $config->get('log-viewer.patternRealTime', []);
 
             $filesystem->setPattern(
                 Arr::get($pattern, 'prefix',    Utilities\Filesystem::PATTERN_PREFIX),
                 Arr::get($pattern, 'date',      Utilities\Filesystem::PATTERN_DATE),
-                Arr::get($pattern, 'extension', Utilities\Filesystem::PATTERN_EXTENSION)
+                Arr::get($pattern, 'extension', Utilities\Filesystem::PATTERN_EXTENSION),
+                Arr::get($patternRealTime, 'prefix',    Utilities\Filesystem::PATTERN_PREFIXRT),
+                Arr::get($patternRealTime, 'name',      Utilities\Filesystem::PATTERN_NAME),
+                Arr::get($patternRealTime, 'extension', Utilities\Filesystem::PATTERN_EXTENSIONRT)
             );
 
             return $filesystem;

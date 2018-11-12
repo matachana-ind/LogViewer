@@ -46,6 +46,13 @@ class Filesystem implements FilesystemContract
     protected $datePattern;
 
     /**
+     * The log files name pattern.
+     *
+     * @var string
+     */
+    protected $namePattern;
+
+    /**
      * The log files extension.
      *
      * @var string
@@ -110,6 +117,16 @@ class Filesystem implements FilesystemContract
     }
 
     /**
+     * Get the log pattern.
+     *
+     * @return string
+     */
+    public function getPatternRealTime()
+    {
+        return $this->prefixPatternRT.$this->namePattern.$this->extensionRT;
+    }
+
+    /**
      * Set the log pattern.
      *
      * @param  string  $date
@@ -121,11 +138,17 @@ class Filesystem implements FilesystemContract
     public function setPattern(
         $prefix    = self::PATTERN_PREFIX,
         $date      = self::PATTERN_DATE,
-        $extension = self::PATTERN_EXTENSION
+        $extension = self::PATTERN_EXTENSION,
+        $prefixRT    = self::PATTERN_PREFIXRT,
+        $name      = self::PATTERN_NAME,
+        $extensionRT = self::PATTERN_EXTENSIONRT
     ) {
         $this->setPrefixPattern($prefix);
         $this->setDatePattern($date);
         $this->setExtension($extension);
+        $this->setPrefixPatternRT($prefixRT);
+        $this->setNamePattern($name);
+        $this->setExtensionRT($extensionRT);
 
         return $this;
     }
@@ -145,6 +168,20 @@ class Filesystem implements FilesystemContract
     }
 
     /**
+     * Set the log name pattern.
+     *
+     * @param  string  $namePattern
+     *
+     * @return self
+     */
+    public function setNamePattern($namePattern)
+    {
+        $this->namePattern = $namePattern;
+
+        return $this;
+    }
+
+    /**
      * Set the log prefix pattern.
      *
      * @param  string  $prefixPattern
@@ -159,6 +196,20 @@ class Filesystem implements FilesystemContract
     }
 
     /**
+     * Set the log prefix patternRT.
+     *
+     * @param  string  $prefixPatternRT
+     *
+     * @return self
+     */
+    public function setPrefixPatternRT($prefixPatternRT)
+    {
+        $this->prefixPatternRT = $prefixPatternRT;
+
+        return $this;
+    }
+
+    /**
      * Set the log extension.
      *
      * @param  string  $extension
@@ -168,6 +219,20 @@ class Filesystem implements FilesystemContract
     public function setExtension($extension)
     {
         $this->extension = $extension;
+
+        return $this;
+    }
+
+    /**
+     * Set the log extension.
+     *
+     * @param  string  $extension
+     *
+     * @return self
+     */
+    public function setExtensionRT($extensionRT)
+    {
+        $this->extensionRT = $extensionRT;
 
         return $this;
     }
@@ -194,7 +259,12 @@ class Filesystem implements FilesystemContract
      */
     public function logs()
     {
-        return $this->getFiles($this->getPattern());
+        $result = $this->getFiles($this->getPattern());
+        $aux = $this->getFiles($this->getPatternRealTime());
+        foreach ($aux as $filename) {
+            array_push($result, $filename);
+        }
+        return $result;
     }
 
     /**
@@ -209,7 +279,6 @@ class Filesystem implements FilesystemContract
         $combined = [];
         $files = array_reverse($this->logs());
         $dates = $this->extractDates($files);
-
         if ($withPaths) {
             $combined = $this->combo($dates, $files);
         }
@@ -363,8 +432,9 @@ class Filesystem implements FilesystemContract
      */
     private function getFiles($pattern)
     {
+        $pattern_search = $this->storagePath.DS.$pattern;
         $files = $this->filesystem->glob(
-            $this->storagePath.DS.$pattern, GLOB_BRACE
+            $pattern_search, GLOB_BRACE
         );
 
         return array_filter(array_map('realpath', $files));
@@ -379,8 +449,19 @@ class Filesystem implements FilesystemContract
      */
     private function extractDates(array $files)
     {
-        return array_map(function ($file) {
-            return extract_date(basename($file));
+        $aux = array_map(function ($file) {
+            $a = extract_date(basename($file));
+            return $a;
         }, $files);
+        
+        // set today to RT logs
+        foreach ($aux as $key => $value) {
+            $x = $value;
+            if (!(date('Y-m-d', strtotime($x)) == $x)) {
+              // NO it's a date
+              $aux[$key] = date("Y-m-d");
+            }
+        }
+        return $aux;
     }
 }

@@ -18,6 +18,9 @@ interface Filesystem extends Patternable
     const PATTERN_PREFIX    = 'laravel-';
     const PATTERN_DATE      = '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]';
     const PATTERN_EXTENSION = '.log';
+    const PATTERN_PREFIXRT    = 'python-';
+    const PATTERN_NAME      = '*-RT';
+    const PATTERN_EXTENSIONRT = '.log';
 
     /* -----------------------------------------------------------------
      |  Getters & Setters
@@ -66,6 +69,33 @@ interface Filesystem extends Patternable
      * @return self
      */
     public function setExtension($extension);
+
+    /**
+     * Set the log name pattern.
+     *
+     * @param  string  $namePattern
+     *
+     * @return self
+     */
+    public function setNamePattern($namePattern);
+
+    /**
+     * Set the log prefix pattern.
+     *
+     * @param  string  $prefixPattern
+     *
+     * @return self
+     */
+    public function setPrefixPatternRT($prefixPatternRT);
+
+    /**
+     * Set the log extension.
+     *
+     * @param  string  $extension
+     *
+     * @return self
+     */
+    public function setExtensionRT($extensionRT);
 
     /* -----------------------------------------------------------------
      |  Main Methods
